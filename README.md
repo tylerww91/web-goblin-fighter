@@ -17,6 +17,14 @@ If you work on more than one feature at a time, you are guaranteed to multiply y
 
 Additional considerations:
 
+## HTML
+
+1. im going to need 3 main containers
+
+-   1 that is just a battle log that displays the damage dealt to the opponent and the user
+-   1 that holds a scoreboard to keeps track of the user's HP, and stars gained for defeating enemies. As well as the user sprite/img (Mario)
+-   The last container will hold the input/button that add opponents, the opponents themselves and the remove dead opponents button
+
 -   Ask: which of your HTML elements need to be hard coded, and which need to be dynamically generated?
 -   Consider your data model.
     -   What kinds of objects (i.e., Dogs, Friends, Todos, etc) will you need?
@@ -25,3 +33,5 @@ Additional considerations:
     -   What needs to live in a persistence layer?
 -   Is there some state we need to initialize?
 -   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be reused?)
+
+[wireframe](https://whimsical.com/web-goblin-fighter-copy-QVyCxijrqo9EPuqCq9vbpa)
