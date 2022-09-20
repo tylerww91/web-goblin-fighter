@@ -30,19 +30,34 @@
         </header>
 
         <main>
-            <section id="battle-log">battle log</section>
+            <section id="battle-log">
+                <p>battle log</p>
+            </section>
             <div id="game-container">
                 <section id="user-container" class="user card">
-                    <p>HP:20/20 ⭐:</p>
-                    <h4></h4>
+                    <p class="stat">20</p>
                     <img src="/assets/paper-mario.png" alt="Mario" id="user-img" />
                 </section>
                 <section id="opp-container">
-                    <label for="opp-input">Add Opponent</label>
-                    <input type="text" id="opp-input" />
-                    <button id="add-opp-button">+</button>
+                    <form action="add opponent" id="add-opp-form">
+                        <label for="opp-input">Add Opponent</label>
+                        <input type="text" id="opp-input" />
+                        <button id="add-opp-button">+</button>
+                    </form>
+                    <ul id="opp-list">
+                        <li class="opp stat">
+                            <span class="stat">5</span>
+                            <img class="opp-img" alt="goombella" src="/assets/goombella-opp.png" />
+                            <span class="name">Goombella</span>
+                        </li>
+                        <li>
+                            <span class="stat">5</span>
+                            <img class="opp-img" alt="rex" src="/assets/rex-opp.png" />
+                            <span class="name">Rex</span>
+                        </li>
+                        <li></li>
+                    </ul>
                     <button id="remove-opp-button">Remove Dead Opponent</button>
-                    opp/input/button/button
                 </section>
             </div>
         </main>

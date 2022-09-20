@@ -1,7 +1,14 @@
+main {
+    display: flex;
+    flex-direction: column;
+}
+
 #battle-log {
     display: flex;
     background-color: beige;
     height: 30px;
+    align-items: center;
+    justify-content: center;
 }
 
 #game-container {
@@ -22,17 +29,34 @@
 }
 
 #opp-container {
-    display: flex;
+    display: grid;
+    grid-template-rows: 40px 1fr 40px;
     background-color: darkgray;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
 }
 
 #user-img {
     height: 150px;
 }
 
+.opp-img {
+    height: 50px;
+}
+
 .user {
     height: 200px;
     height: 300px;
+}
+
+.opp {
+}
+
+.stat {
+}
+
+.name {
 }
 
 .card {
@@ -41,6 +65,7 @@
 
 #opp-input {
     height: 20px;
+    width: 140px;
 }
 
 #add-opp-button {
@@ -49,4 +74,20 @@
 
 #remove-opp-button {
     height: 20px;
+    width: 200px;
+}
+
+#add-opp-form {
+}
+
+#opp-list {
+}
+
+li {
+    display: grid;
+    grid-template-columns: 50px 60px 120px;
+    background-color: antiquewhite;
+    align-items: center;
+    justify-items: center;
+    gap: 5px;
 }
