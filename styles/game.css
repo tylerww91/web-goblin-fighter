@@ -91,3 +91,10 @@ li {
     justify-items: center;
     gap: 5px;
 }
+
+tr,
+td {
+    width: 40px;
+    border: 2px solid grey;
+    text-align: center;
+}

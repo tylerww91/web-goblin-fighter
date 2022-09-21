@@ -12,6 +12,8 @@ let user = {
     type: 'mario',
 };
 
+let gameState = '';
+
 let opp = '';
 
 /* Events */
@@ -21,9 +23,11 @@ let opp = '';
 function userDisplay() {
     userHp.textContent = user.hp;
     if (user.hp <= 0) {
+        user = 'dead';
         userImg.src = 'assets/' + 'paper-mario-dead.png';
     } else {
         userImg.src = 'assets/' + 'paper-mario.png';
+        user = 'alive';
     }
 }
 
