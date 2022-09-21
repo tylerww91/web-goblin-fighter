@@ -2,8 +2,8 @@ export function getRandomNumber(choices) {
     return Math.floor(Math.random() * choices);
 }
 
-export function getRandomItem(array) {
-    const random = getRandomNumber(array.length);
-    const item = array[random];
+export function getRandomItem(oppTypes) {
+    const random = getRandomNumber(oppTypes.length);
+    const item = oppTypes[random];
     return item;
 }

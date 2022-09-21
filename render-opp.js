@@ -11,7 +11,7 @@ export function renderOpp(opp) {
     if (opp.hp < 1) {
         oppImg.src = '/assets/tombstone-opp.png';
     } else {
-        oppImg.src = '/assets/' + opp.name + '-opp.png';
+        oppImg.src = '/assets/' + opp.type + '-opp.png';
     }
 
     const oppName = document.createElement('span');

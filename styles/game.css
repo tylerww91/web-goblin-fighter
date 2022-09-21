@@ -5,6 +5,14 @@ main {
 
 #battle-log {
     display: flex;
+    background-color: rgb(226, 103, 46);
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+#message-display {
+    display: flex;
     background-color: beige;
     height: 30px;
     align-items: center;
