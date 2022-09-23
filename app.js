@@ -132,9 +132,9 @@ function userDisplay() {
     }
 }
 
-// function playAudio() {
-//     deathSound.play;
-// }
+function attackImgChange() {
+    userImg.src = 'asset/' + 'paper-mario-attack.png';
+}
 
 function displayOpp() {
     oppSection.innerHTML = '';
@@ -144,6 +144,9 @@ function displayOpp() {
         oppSection.append(oppEl);
 
         oppEl.addEventListener('click', () => {
+            attackImgChange();
+            // setTimeout(userDisplay(), 2000);
+
             if (opp.hp < 1) {
                 result = 'no use hitting a tombstone, that is just disrespectful';
                 displayBattleLog();
@@ -158,7 +161,7 @@ function displayOpp() {
 
             result = '';
             if (userAttack === 0) {
-                result += 'Thatsaaa MISS';
+                result += 'Thatsaaa MISS. ';
             } else {
                 result += `You hit ${opp.name} and dealt ${userAttack} damage!`;
             }
@@ -178,7 +181,7 @@ function displayOpp() {
             }
 
             displayBattleLog();
-            userDisplay();
+            // userDisplay();
             displayOpp();
         });
     }
