@@ -1,12 +1,12 @@
 main {
     display: flex;
     flex-direction: column;
-    background-image: url('/assets/paper-background.jpg');
+    /* background-image: url('/assets/paper-background.jpg'); */
 }
 
 #battle-log {
     display: flex;
-    background-color: rgb(226, 103, 46);
+    background-color: rgba(226, 103, 46, 0.39);
     height: 30px;
     align-items: center;
     justify-content: center;
@@ -14,7 +14,7 @@ main {
 
 #message-display {
     display: flex;
-    background-color: beige;
+    background-color: rgba(245, 245, 220, 0.671);
     height: 30px;
     align-items: center;
     justify-content: center;
@@ -87,16 +87,17 @@ main {
 }
 
 #opp-list {
+    display: grid;
+    gap: 15px;
 }
 
 .opp {
     display: grid;
     grid-template-columns: 50px 60px 120px;
-    background-color: antiquewhite;
+    background-color: rgba(250, 235, 215, 0.459);
     align-items: center;
     justify-items: center;
     border: 1px solid black;
-    gap: 5px;
 }
 
 tr,
@@ -106,5 +107,5 @@ td {
     text-align: center;
 }
 
-.attack-animation {
+ul {
 }

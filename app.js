@@ -3,11 +3,10 @@ import { renderOpp } from './render-opp.js';
 import { getRandomItem } from './utils.js';
 /* Get DOM Elements */
 
-// const stat = document.getElementById('stat');
+const removeOpp = document.getElementById('remove-opp-button');
 const userImg = document.getElementById('user-img');
 const userHp = document.getElementById('user-hp');
 const battleLog = document.getElementById('battle-log');
-// const resultDisplay = document.getElementById('result-display');
 const messageDisplay = document.getElementById('message-display');
 const oppSection = document.getElementById('opp-list');
 const userKills = document.getElementById('user-kills');
@@ -90,6 +89,9 @@ const oppAttacks = [0, 0, 1, 1, 1, 1, 2, 2, 2, 3, 3];
 
 /* Events */
 
+deathSound.volume = 0.5;
+oppDeathSound.volume = 0.5;
+
 addOppForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(addOppForm);
@@ -108,6 +110,17 @@ addOppForm.addEventListener('submit', (e) => {
     displayOpp();
     displayBattleLog();
     addOppForm.reset();
+});
+
+removeOpp.addEventListener('click', () => {
+    const stillAlive = [];
+    for (const opp of opps) {
+        if (opp.hp > 0) {
+            stillAlive.push(opp);
+        }
+    }
+    opps = stillAlive;
+    displayOpp();
 });
 
 /* Display Functions */
@@ -132,10 +145,6 @@ function userDisplay() {
     }
 }
 
-function attackImgChange() {
-    userImg.src = 'asset/' + 'paper-mario-attack.png';
-}
-
 function displayOpp() {
     oppSection.innerHTML = '';
 
@@ -144,9 +153,6 @@ function displayOpp() {
         oppSection.append(oppEl);
 
         oppEl.addEventListener('click', () => {
-            attackImgChange();
-            // setTimeout(userDisplay(), 2000);
-
             if (opp.hp < 1) {
                 result = 'no use hitting a tombstone, that is just disrespectful';
                 displayBattleLog();
@@ -161,9 +167,9 @@ function displayOpp() {
 
             result = '';
             if (userAttack === 0) {
-                result += 'Thatsaaa MISS. ';
+                result += 'Thatsaaa MISS.  ';
             } else {
-                result += `You hit ${opp.name} and dealt ${userAttack} damage!`;
+                result += `You hit ${opp.name} and dealt ${userAttack} damage!  `;
             }
 
             if (oppAttack === 0) {
@@ -181,7 +187,7 @@ function displayOpp() {
             }
 
             displayBattleLog();
-            // userDisplay();
+            userDisplay();
             displayOpp();
         });
     }
