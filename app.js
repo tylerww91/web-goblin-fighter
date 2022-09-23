@@ -2,7 +2,7 @@
 import { renderOpp } from './render-opp.js';
 import { getRandomItem } from './utils.js';
 /* Get DOM Elements */
-
+const playAgain = document.getElementById('play-again-button');
 const removeOpp = document.getElementById('remove-opp-button');
 const userImg = document.getElementById('user-img');
 const userHp = document.getElementById('user-hp');
@@ -13,6 +13,7 @@ const userKills = document.getElementById('user-kills');
 const addOppForm = document.getElementById('add-opp-form');
 const deathSound = new Audio('/assets/mario-dies-sound.mp3');
 const oppDeathSound = new Audio('/assets/opp-death-sound.mp3');
+
 /* State */
 let result = '';
 
@@ -123,6 +124,10 @@ removeOpp.addEventListener('click', () => {
     displayOpp();
 });
 
+playAgain.addEventListener('click', () => {
+    location.reload();
+});
+
 /* Display Functions */
 
 function displayBattleLog() {
@@ -139,6 +144,8 @@ function userDisplay() {
         user.status = 'dead';
         userImg.src = 'assets/' + 'paper-mario-dead.png';
         deathSound.play();
+        playAgain.classList.remove('hidden');
+        oppSection.classList.add('hidden');
     } else {
         userImg.src = 'assets/' + 'paper-mario.png';
         user.status = 'alive';
@@ -155,6 +162,12 @@ function displayOpp() {
         oppEl.addEventListener('click', () => {
             if (opp.hp < 1) {
                 result = 'no use hitting a tombstone, that is just disrespectful';
+                displayBattleLog();
+                return;
+            }
+
+            if (user.hp < 1) {
+                result = `You died! click 'Play again' to continue`;
                 displayBattleLog();
                 return;
             }

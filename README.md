@@ -35,3 +35,19 @@ Additional considerations:
 -   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be reused?)
 
 [wireframe](https://whimsical.com/web-goblin-fighter-copy-QVyCxijrqo9EPuqCq9vbpa)
+
+image sources:
+
+tombstone - https://www.flaticon.com/free-icon/tombstone_218207?term=tombstone&page=1&position=16&page=1&position=16&related_id=218207&origin=search
+
+paper background - https://www.freepik.com/free-photo/design-space-paper-textured-background_3220799.htm#query=paper%20background&position=0&from_view=keyword
+
+bowser sprite - https://www.spriters-resource.com/resources/sheets/81/84243.png?updated=1476452529
+
+rex - https://www.spriters-resource.com/fullview/104404/
+
+mario - https://www.pngwing.com/en/free-png-nfyok
+
+goombella - https://www.nicepng.com/png/detail/223-2238709_blizz-the-mizzter-blizzard-paper-mario-goombella-sprites.png
+
+enemy sprites - https://www.pinterest.com/pin/754071531333869499/?nic_v3=1a52wbu7M

@@ -109,3 +109,7 @@ td {
 
 ul {
 }
+
+.hidden {
+    display: none;
+}
