@@ -12,6 +12,8 @@ const messageDisplay = document.getElementById('message-display');
 const oppSection = document.getElementById('opp-list');
 const userKills = document.getElementById('user-kills');
 const addOppForm = document.getElementById('add-opp-form');
+const deathSound = new Audio('/assets/mario-dies-sound.mp3');
+const oppDeathSound = new Audio('/assets/opp-death-sound.mp3');
 /* State */
 let result = '';
 
@@ -105,7 +107,6 @@ addOppForm.addEventListener('submit', (e) => {
 
     displayOpp();
     displayBattleLog();
-
     addOppForm.reset();
 });
 
@@ -124,11 +125,16 @@ function userDisplay() {
     if (user.hp < 1) {
         user.status = 'dead';
         userImg.src = 'assets/' + 'paper-mario-dead.png';
+        deathSound.play();
     } else {
         userImg.src = 'assets/' + 'paper-mario.png';
         user.status = 'alive';
     }
 }
+
+// function playAudio() {
+//     deathSound.play;
+// }
 
 function displayOpp() {
     oppSection.innerHTML = '';
@@ -168,6 +174,7 @@ function displayOpp() {
                 displayBattleLog();
                 userKills.textContent = defeated;
                 messageDisplay.textContent = `You defeated ${defeated} opponent(s)`;
+                oppDeathSound.play();
             }
 
             displayBattleLog();
