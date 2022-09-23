@@ -11,7 +11,7 @@ const battleLog = document.getElementById('battle-log');
 const messageDisplay = document.getElementById('message-display');
 const oppSection = document.getElementById('opp-list');
 const userKills = document.getElementById('user-kills');
-
+const addOppForm = document.getElementById('add-opp-form');
 /* State */
 let result = '';
 
@@ -87,6 +87,27 @@ const oppAttacks = [0, 0, 1, 1, 1, 1, 2, 2, 2, 3, 3];
 // let opp = '';
 
 /* Events */
+
+addOppForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(addOppForm);
+    const oppType = getRandomItem(oppTypes);
+
+    const opp = {
+        name: formData.get('name'),
+        type: oppType.type,
+        hp: oppType.hp,
+    };
+
+    opps.push(opp);
+
+    result = `${opp.name} the ${opp.type} joined the fight!`;
+
+    displayOpp();
+    displayBattleLog();
+
+    addOppForm.reset();
+});
 
 /* Display Functions */
 
