@@ -1,39 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-    <!-- metadata -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <!-- title and favicon -->
+        <title>Web App</title>
+        <link rel="icon" type="image/x-icon" href="assets/alchemy-favicon.png" />
 
-    <!-- title and favicon -->
-    <title>Web App</title>
-    <link rel="icon" type="image/x-icon" href="assets/alchemy-favicon.png" />
+        <!-- js -->
+        <script type="module" src="app.js"></script>
 
-    <!-- js -->
-    <script type="module" src="app.js"></script>
+        <!-- fonts -->
+        <!-- see https://fonts.google.com/ -->
 
-    <!-- fonts -->
-    <!-- see https://fonts.google.com/ -->
+        <!-- css -->
+        <link rel="stylesheet" href="styles/reset.css" />
+        <link rel="stylesheet" href="styles/global.css" />
+        <link rel="stylesheet" href="styles/game.css" />
+        <!-- add link for page specific css -->
+    </head>
 
-    <!-- css -->
-    <link rel="stylesheet" href="styles/reset.css" />
-    <link rel="stylesheet" href="styles/global.css" />
-    <!-- add link for page specific css -->
+    <body>
+        <header>
+            <img class="logo" src="assets/banner - Copy.png" alt="logo" />
+            <!-- <h1>Paper Mario JS: Get them Goombahs</h1> -->
+        </header>
 
-</head>
-
-<body>
-    <header>
-        <img class="logo" src="assets/html_css_js.png" alt="logo">
-        <h1>Web App</h1>
-    </header>
-
-    <main>
-
-    </main>
-
-</body>
-
+        <main>
+            <section id="battle-log">
+                <p>battle log</p>
+            </section>
+            <section id="message-display">
+                <p>message</p>
+            </section>
+            <div id="game-container">
+                <section id="user-container" class="user card">
+                    <table id="scoreboard">
+                        <tr>
+                            <td>HP:</td>
+                            <td id="user-hp"></td>
+                            <td>⭐:</td>
+                            <td id="user-kills"></td>
+                        </tr>
+                    </table>
+                    <p id="user-name" class="stat">Mario</p>
+                    <img src="/assets/paper-mario.png" alt="Mario" id="user-img" />
+                    <button id="play-again-button" class="hidden">Play again</button>
+                </section>
+                <section id="opp-container">
+                    <form action="add opponent" id="add-opp-form">
+                        <label for="opp-input">Add Opponent</label>
+                        <input name="name" id="opp-input" />
+                        <button id="add-opp-button">+</button>
+                    </form>
+                    <ul id="opp-list">
+                        <li class="opp">
+                            <span class="stat">5</span>
+                            <img class="opp-img" alt="goombella" src="/assets/goombella-opp.png" />
+                            <span class="name">Goombella</span>
+                        </li>
+                        <li>
+                            <span class="stat">5</span>
+                            <img class="opp-img" alt="rex" src="/assets/rex-opp.png" />
+                            <span class="name">Rex</span>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <button id="remove-opp-button">Remove Dead Opponent</button>
+                </section>
+            </div>
+        </main>
+    </body>
 </html>
