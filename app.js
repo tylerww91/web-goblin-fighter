@@ -82,11 +82,6 @@ const oppTypes = [
 const userAttacks = [0, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 5, 5, 8];
 const oppAttacks = [0, 0, 1, 1, 1, 1, 2, 2, 2, 3, 3];
 
-// let message = '';
-
-// let gameState = '';
-
-// let opp = '';
 
 /* Events */
 
